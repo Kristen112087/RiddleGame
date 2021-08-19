@@ -23,6 +23,8 @@ namespace RiddleGame
             bool continueToRun = true;
             while (continueToRun)
             {
+                Console.BackgroundColor = ConsoleColor.Gray;
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;  
                 Console.Clear();
                 Console.WriteLine("Welcome to the Riddle Game! I will give you a riddle to solve. Solve the riddle by going down each path and collecting letters to help you find the answer!\n\nHere is your riddle:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I??\n\nChoose from the menu options below by typing the number path you'd like to go down.\nMenu:\nPath 1\nPath 2\nPath 3\nPath 4\n5. See aquired letters\n6. Guess Riddle\n7. Exit");
 
