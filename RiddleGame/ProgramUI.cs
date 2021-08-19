@@ -23,7 +23,7 @@ namespace RiddleGame
                 Console.BackgroundColor = ConsoleColor.Gray;
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;  
                 Console.Clear();
-                Console.WriteLine("\t\t\t\n\nWelcome to the Riddle Game! I will give you a riddle to solve. Solve the riddle by going down each path and collecting letters to help you find the answer!\n\n\t\tHere is your riddle:\n\n~~~I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I??~~~\n\nChoose from the menu options below by typing the number path you'd like to go down.\n\tMenu:\n\t\tPath 1\n\t\tPath 2\n\t\tPath 3\n\t\tPath 4\n\t\t5. See aquired letters\n\t\t6. Guess Riddle\n\t\t7. Exit");
+                Console.WriteLine("\n\tWelcome to the Riddle Game! I will give you a riddle, you have to solve the riddle by going down each path and collecting letters to help you find the answer!\n\n\t\tHere is your riddle:\n\n~~~I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I??~~~\n\nChoose from the menu options below by typing the number path you'd like to go down.\n\tMenu:\n\t\tPath 1\n\t\tPath 2\n\t\tPath 3\n\t\tPath 4\n\t\t5. See aquired letters\n\t\t6. Guess Riddle\n\t\t7. Exit");
 
                 string userInput = Console.ReadLine();
                 if (_lettersList.Contains("C") && _lettersList.Contains("E") && _lettersList.Contains("H") && _lettersList.Contains("O"))
@@ -184,16 +184,7 @@ namespace RiddleGame
         }
         public void SeeAquiredLetters()
         {
-            //Console.Clear();
-            //foreach (string letterAquired in _lettersList)
-            //{
-                //Console.WriteLine($"You have aquired the letter(s) " + letterAquired + " press any key to coninue");
-            //}
-
-            //Console.ReadLine();
             Console.Clear();
-            //Console.WriteLine("Here are all the letters you've aquired!");
-            //string userInput = Console.ReadLine();
             if (_lettersList.Count == 0)
             {
                     Console.Clear();
@@ -206,7 +197,7 @@ namespace RiddleGame
                 Console.Clear();
                 Console.WriteLine("\n\t\nYou acquired the followings:\n\n");
                 _lettersList.ForEach(Console.WriteLine);
-                Console.WriteLine("\n\n\n\nPress any key to go to the main menu...");
+                Console.WriteLine("\n\nPress any key to go to the main menu...");
                 Console.ReadKey();
             }
         }
@@ -214,10 +205,10 @@ namespace RiddleGame
         public void GuessRiddle()
         {
             Console.Clear();
-            Console.WriteLine("What is your guess to the riddle?\n\nHere are the letters you aquired:\n");
+            //Console.WriteLine("What is your guess to the riddle?\n\nHere are the letters you aquired:\n");
             foreach (string letterAquired in _lettersList)
             {
-                Console.WriteLine(letterAquired);
+                //Console.WriteLine(letterAquired);
             }
             //Console.WriteLine(string.Join(", ",_lettersList));
             Console.WriteLine("\nI speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I??");
