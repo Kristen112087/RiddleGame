@@ -24,7 +24,7 @@ namespace RiddleGame
             while (continueToRun)
             {
                 Console.Clear();
-                Console.WriteLine("Welcome to the Riddle Game! I will give you a riddle to solve. Solve the riddle by going down each path and collecting letters to help you find the answer!\n\nHere is your riddle:\n\nI speak without a mouth and hear without ears. I have no body, but i come alive with wind. What am I??\n\nChoose from the menu options below by typing the number path you'd like to go down.\nMenu:\nPath 1\nPath 2\nPath 3\nPath 4\n5. See aquired letters\n6. Guess Riddle\n7. Exit");
+                Console.WriteLine("Welcome to the Riddle Game! I will give you a riddle to solve. Solve the riddle by going down each path and collecting letters to help you find the answer!\n\nHere is your riddle:\n\nI speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I??\n\nChoose from the menu options below by typing the number path you'd like to go down.\nMenu:\nPath 1\nPath 2\nPath 3\nPath 4\n5. See aquired letters\n6. Guess Riddle\n7. Exit");
 
                 string userInput = Console.ReadLine();
                 if (_guess.Contains("C") && _guess.Contains("E") && _guess.Contains("H") && _guess.Contains("O"))
@@ -186,25 +186,29 @@ namespace RiddleGame
         {
             Console.Clear();
             foreach (string letterAquired in _guess)
-             
             {
-                _guess.ToArray
                 Console.WriteLine($"You have aquired the letter(s) " + letterAquired + " press any key to coninue");
-                Console.ReadLine();
             }
 
-
+            Console.ReadLine();
         }
+
         public void GuessRiddle()
         {
             Console.Clear();
-            Console.WriteLine("What is your guess to the riddle?\n\nI speak without a mouth and hear without ears. I have no body, but i come alive with wind. What am I??");
+            Console.WriteLine("What is your guess to the riddle?\n\nHere are the letters you aquired:\n");
+            foreach (string letterAquired in _guess)
+            {
+                Console.WriteLine(letterAquired);
+            }
+            //Console.WriteLine(string.Join(", ",_guess));
+            Console.WriteLine("\nI speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I??");
             string command = Console.ReadLine().ToLower();
 
             if (command == "echo")
             {
                 Console.Clear();
-                Console.WriteLine("Wow! You are AMAZING!\n\nPress any key to go to main menu\n\nPress any key to go to main menu");
+                Console.WriteLine("Wow! You are AMAZING!\n\nPress any key to go to main menu");
                 Console.ReadKey();
             }
             else if (command == null)
